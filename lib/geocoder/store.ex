@@ -75,7 +75,7 @@ defmodule Geocoder.Store do
   # Private API
   defp encode(location, opt \\ nil)
   defp encode({lat, lon}, precision) do
-    :geohash.encode(:erlang.float(lat), :erlang.float(lon), precision)
+    geohash.encode(:erlang.float(lat), :erlang.float(lon), precision)
     |> Result.unwrap
   end
   defp encode(location, _) when is_binary(location) do
